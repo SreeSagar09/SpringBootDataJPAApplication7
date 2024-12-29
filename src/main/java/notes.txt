@@ -1,0 +1,25 @@
+A Program to show how to work with @Query annotation:
+Programs:
+* SpringBootDataJPAApplication7Application.java
+* Employee.java
+* EmployeeRepository.java
+* TestRunner.java
+Notes:
+* The resultant  Object class field names and field type must and should match with the entity class field names and its field type.
+* The result object class is not in entity class package then use fully qualified class name.
+Output:
+From run method in TestRunner class.
+---- To get record by getAllEmployees() method ----
+Hibernate: select employee0_.employee_id as col_0_0_, employee0_.employee_code as col_1_0_, employee0_.employee_name as col_2_0_, employee0_.age as col_3_0_, employee0_.designation as col_4_0_ from employee employee0_
+1 --> Sree Sagar[A001]
+2 --> Sathish[A002]
+3 --> Pavan[A003]
+4 --> Aravind[A004]
+5 --> Pavan[A005]
+6 --> Rakesh[A006]
+---- To get record by getEmployeesByDesignation(String designation) method ----
+Hibernate: select employee0_.employee_id as col_0_0_, employee0_.employee_code as col_1_0_, employee0_.employee_name as col_2_0_ from employee employee0_ where employee0_.designation=?
+3 --> Pavan[A003]
+4 --> Aravind[A004]
+5 --> Pavan[A005]
+From main method in SpringBootDataJPAApplication7Application class.
